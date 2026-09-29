@@ -9,7 +9,9 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\Attributes\Test;
 use Psr\Log\NullLogger;
+use StudioMitte\FriendlyCaptcha\ConfigurationInterface;
 use StudioMitte\FriendlyCaptcha\Service\Api;
 use StudioMitte\FriendlyCaptcha\Tests\RequestTrait;
 use TYPO3\CMS\Core\Http\Client\GuzzleClientFactory;
@@ -21,9 +23,7 @@ class ApiTest extends BaseTestCase
 {
     use RequestTrait;
 
-    /**
-     * @test
-     */
+    #[Test]
     public function verifyUrlIsCalledWithProperData(): void
     {
         self::setupRequest();
@@ -40,13 +40,17 @@ class ApiTest extends BaseTestCase
         } else {
             $factory = new RequestFactory();
         }
-        $api = new Api($factory, $client, new NullLogger());
+        $configuration = $this->createMock(ConfigurationInterface::class);
+        $configuration->method('isEnabled')->willReturn(true);
+        $configuration->method('getSiteSecretKey')->willReturn('ABCDE');
+        $configuration->method('getFirstVerifyUrl')->willReturn('https://verify');
+
+        $api = new Api($factory, $client, new NullLogger(), $configuration);
         self::assertTrue($api->verify());
+        self::assertSame('https://verify', (string)$historyContainer[0]['request']->getUri());
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function solutionIsRetrieved(): void
     {
         self::setupRequest();

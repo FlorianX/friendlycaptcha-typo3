@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace StudioMitte\FriendlyCaptcha\Tests\Unit\ViewHelpers;
 
+use PHPUnit\Framework\Attributes\Test;
 use StudioMitte\FriendlyCaptcha\Tests\RequestTrait;
 use StudioMitte\FriendlyCaptcha\ViewHelpers\ConfigurationViewHelper;
 use TYPO3\TestingFramework\Core\BaseTestCase;
@@ -12,10 +13,8 @@ class ConfigurationViewHelperTest extends BaseTestCase
 {
     use RequestTrait;
 
-    /**
-     * @test
-     */
-    public function viewHelperReturnsProperConfiguration()
+    #[Test]
+    public function viewHelperReturnsProperConfiguration(): void
     {
         self::setupRequest();
         $configurationViewHelper = new ConfigurationViewHelper();
@@ -24,7 +23,7 @@ class ConfigurationViewHelperTest extends BaseTestCase
             'siteKey' => '1234',
             'verifyUrl' => 'https://verify,https://verify2',
             'useEuPuzzleEndpoint' => false,
-            'jsPath' => 'EXT:friendlycaptcha_official/Resources/Public/JavaScript/lib/sdk@0.1.8-site.compat.min.js',
+            'jsPath' => 'EXT:friendlycaptcha_official/Resources/Public/JavaScript/lib/sdk@0.1.26-site.compat.min.js',
             'enabled' => true,
         ], $configurationViewHelper->render());
     }

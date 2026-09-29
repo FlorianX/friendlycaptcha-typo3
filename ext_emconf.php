@@ -6,7 +6,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'plugin',
     'constraints' => [
         'depends' => [
-            'typo3' => '11.5.0-12.9.99',
+            'typo3' => '12.4.5-14.3.99',
         ],
         'conflicts' => [
         ],
@@ -16,6 +16,6 @@ $EM_CONF[$_EXTKEY] = [
             'StudioMitte\\FriendlyCaptcha\\' => 'Classes',
         ],
     ],
-    'state' => 'beta',
-    'version' => '1.0.0',
+    'state' => 'stable',
+    'version' => '2.3.0',
 ];

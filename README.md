@@ -1,19 +1,22 @@
 # TYPO3 Extension `friendlycaptcha_official`
 
-[![Total Downloads](http://poser.pugx.org/studiomitte/friendlycaptcha/downloads)](https://packagist.org/packages/studiomitte/friendlycaptcha)
-[![TYPO3 11](https://img.shields.io/badge/TYPO3-11-orange.svg)](https://get.typo3.org/version/11)
+[![Total Downloads](https://poser.pugx.org/studiomitte/friendlycaptcha/downloads)](https://packagist.org/packages/studiomitte/friendlycaptcha)
 [![TYPO3 12](https://img.shields.io/badge/TYPO3-12-orange.svg)](https://get.typo3.org/version/12)
-[![License](http://poser.pugx.org/studiomitte/friendlycaptcha/license)](https://packagist.org/packages/studiomitte/friendlycaptcha)
+[![TYPO3 13](https://img.shields.io/badge/TYPO3-13-orange.svg)](https://get.typo3.org/version/13)
+[![TYPO3 14](https://img.shields.io/badge/TYPO3-14-orange.svg)](https://get.typo3.org/version/14)
+[![License](https://poser.pugx.org/studiomitte/friendlycaptcha/license)](https://packagist.org/packages/studiomitte/friendlycaptcha)
 
-[![Build 11](https://github.com/studiomitte/friendlycaptcha-typo3/actions/workflows/core11.yml/badge.svg)](https://github.com/studiomitte/friendlycaptcha-typo3/actions/workflows/core11.yml)
 [![Build 12](https://github.com/studiomitte/friendlycaptcha-typo3/actions/workflows/core12.yml/badge.svg)](https://github.com/studiomitte/friendlycaptcha-typo3/actions/workflows/core12.yml)
+[![Build 13](https://github.com/studiomitte/friendlycaptcha-typo3/actions/workflows/core13.yml/badge.svg)](https://github.com/studiomitte/friendlycaptcha-typo3/actions/workflows/core13.yml)
+[![Build 14](https://github.com/studiomitte/friendlycaptcha-typo3/actions/workflows/core14.yml/badge.svg)](https://github.com/studiomitte/friendlycaptcha-typo3/actions/workflows/core14.yml)
 
 This extension integrations the GDPR-compliant captcha service of [**Friendly Captcha**](https://friendlycaptcha.com/) into TYPO3.
 
 Supported TYPO3 versions:
 
-- 11.5 LTS
 - 12.4 LTS
+- 13.4 LTS
+- 14.3 LTS
 
 Supported form extensions:
 
@@ -26,7 +29,7 @@ Supported form extensions:
 composer require studiomitte/friendlycaptcha
 ```
 
-Checkout the full documentation for all details.
+Checkout the full documentation [Using Friendly Captcha](https://docs.typo3.org/p/studiomitte/friendlycaptcha/main/en-us/Using/Index.html) for all details.
 
 
 ## Credits

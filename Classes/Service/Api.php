@@ -11,6 +11,7 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Log\LoggerInterface;
 use StudioMitte\FriendlyCaptcha\ConfigurationInterface;
 use TYPO3\CMS\Core\Http\ServerRequest;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class Api
 {
@@ -23,12 +24,12 @@ class Api
         RequestFactoryInterface $factory,
         ClientInterface $client,
         LoggerInterface $logger,
-        ConfigurationInterface $configuration
+        ?ConfigurationInterface $configuration = null
     ) {
         $this->factory = $factory;
         $this->client = $client;
         $this->logger = $logger;
-        $this->configuration = $configuration;
+        $this->configuration = $configuration ?? GeneralUtility::makeInstance(ConfigurationInterface::class);
     }
 
     public function verify(string $response = ''): bool

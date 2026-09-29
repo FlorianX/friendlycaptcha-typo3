@@ -7,13 +7,10 @@ namespace StudioMitte\FriendlyCaptcha\ViewHelpers;
 use StudioMitte\FriendlyCaptcha\ConfigurationInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
-use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
 class ConfigurationViewHelper extends AbstractViewHelper
 {
-    use CompileWithRenderStatic;
-
-    public static function render()
+    public function render(): array
     {
         $configuration = GeneralUtility::makeInstance(ConfigurationInterface::class);
         return [
