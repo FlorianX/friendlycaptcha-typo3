@@ -9,9 +9,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class ConfigurationViewHelper extends AbstractViewHelper
 {
-    public function __construct(private readonly ConfigurationInterface $configuration)
-    {
-    }
+    public function __construct(private readonly ConfigurationInterface $configuration) {}
 
     public function render(): array
     {
